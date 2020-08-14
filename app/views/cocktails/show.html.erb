@@ -1,13 +1,14 @@
-<div class='card' style='background-image: url("<%= @cocktail.image_url  %>")'>
+<div class='card'>
+  <%= image_tag(@cocktail.image_url, class: "cocktail-avatar mb-3") %>
   <h2><%= @cocktail.name %></h2>
   <div class="dose-list">
   <% @cocktail.doses.each do |dose| %>
-  <li class="dose-item"><span><%= dose.description%> | <%= dose.ingredient.name %></span><span><%= link_to "  🗑",
-            cocktail_dose_path(dose),
-            method: :delete,
-            data: { confirm: "Delete this dose?" }  %></li></span>
+  <li class="dose-item"><%= dose.description%> | <%= dose.ingredient.name %><%= link_to "🗑",
+                  cocktail_dose_path(dose),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %></li>
   <% end %>
   </div>
   <%= link_to "Add a dose", new_cocktail_dose_path(@cocktail), class: "btn btn-dark mb-3" %>
-  <%= link_to "Back to all cocktails", cocktails_path, class: "btn btn-outline-dark" %>
+  <%= link_to "Back to all cocktails", cocktails_path, class: "btn btn-outline-light" %>
 </div>

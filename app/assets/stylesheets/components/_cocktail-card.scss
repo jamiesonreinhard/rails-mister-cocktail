@@ -1,16 +1,20 @@
 .card {
   width: 30%;
   padding: 20px;
-  background-color: transparent;
+  background: linear-gradient(to right, rgba(52,58,65,.5), rgba(52,58,65,1));
   border: none;
   position: relative;
   border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
-// .card-image {
-//   z-index: -1;
-//   position: absolute;
-//   width: 100%;
-//   opacity: 0.5;
-//   border-radius: 5px;
-// }
+.cocktail-avatar {
+  opacity: 0.9;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  box-shadow: 2px 0 15px #c8bdb0;
+}
